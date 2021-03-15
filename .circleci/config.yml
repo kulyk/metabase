@@ -1039,11 +1039,10 @@ workflows:
           description: "(MySQL latest - connecting with SSL)"
           requires:
             - be-tests-ee
-          e:
-            name: mysql-latest
           driver: mysql
           test-selector: :only metabase.driver.mysql-test
           extra-env: >
+            MB_DB_TYPE=h2
             MB_MYSQL_TEST_HOST=jeff-mysql-ssl-testing.cffuckaa0yru.us-east-2.rds.amazonaws.com
             MB_MYSQL_TEST_SSL=true
             MB_MYSQL_TEST_ADDITIONAL_OPTIONS='verifyServerCertificate=true'
