@@ -1046,7 +1046,7 @@ workflows:
             MB_MYSQL_TEST_HOST=jeff-mysql-ssl-testing.cffuckaa0yru.us-east-2.rds.amazonaws.com
             MB_MYSQL_TEST_SSL=true
             MB_MYSQL_TEST_ADDITIONAL_OPTIONS='verifyServerCertificate=true'
-            MB_MYSQL_TEST_SSL_CERT=$(cat /home/circleci/metabase/metabase/resources/certificates/rds-combined-ca-bundle.pem)
+            MB_MYSQL_TEST_SSL_CERT="$(cat /home/circleci/metabase/metabase/resources/certificates/rds-combined-ca-bundle.pem)"
             MB_MYSQL_TEST_PORT=3306
             MB_MYSQL_TEST_USER=metabase
             MB_MYSQL_TEST_PASSWORD=$MYSQL_RDS_SSL_INSTANCE_PASSWORD
