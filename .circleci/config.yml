@@ -1039,6 +1039,8 @@ workflows:
           description: "(MySQL latest - connecting with SSL)"
           requires:
             - be-tests-ee
+          e:
+            name: mysql-latest
           driver: mysql
           test-selector: :only metabase.driver.mysql-test
           extra-env: >
@@ -1048,7 +1050,7 @@ workflows:
             MB_MYSQL_TEST_SSL_CERT=$(cat /home/circleci/metabase/metabase/resources/certificates/rds-combined-ca-bundle.pem)
             MB_MYSQL_TEST_PORT=3306
             MB_MYSQL_TEST_USER=metabase
-            MB_MYSQL_TEST_PASSWORD=E4EvH5BbCaxdkdXB04cNe
+            MB_MYSQL_TEST_PASSWORD=$MYSQL_RDS_SSL_INSTANCE_PASSWORD
 
       - test-driver:
           name: be-tests-mariadb-ee
